@@ -1,3 +1,23 @@
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  /* sticky or fixed are fine */
+  position: fixed;
+  top: 0;
+  height: 69px;
+  width: 100%;
+  background: linear-gradient(to bottom, #000, #0003 70%,#0000); /* background when scroll is in the top */
+  transition: background .5s; /* control how smooth the background changes */
+}
+
+nav.scrolled {
+  background: #0a0a0a;
+}
+
+main {
+  height: 200vh;
+}
+
 #cluster-map {
     width: 100%;
     height: 500px;
@@ -6,4 +26,41 @@
 #map {
     width: 100%;
     height: 300px;
+}
+
+#imgsize{
+    width:500px;
+    height:250px;
+    object-fit:cover;
+    object-position:50% 50%;
+}
+
+#cardSizeWork{
+    max-width:40rem;
+}
+.alignCenterWork{
+     margin-left: 18%;      
+    margin-right: 18%;
+    width: auto;
+}
+
+.alignCenterWorkNav{
+     margin-left: 38%;      
+    margin-right: 12%;
+    width: auto;
+}
+
+.alignCenterWorkRE{
+     margin-left: 38%;      
+    margin-right: 12%;
+    width: auto;
+}
+.scrolling-box {
+  background-color: #eaeaea;
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  text-align: center;
+  width: 100%;
 }

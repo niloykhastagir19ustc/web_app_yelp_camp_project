@@ -25,13 +25,13 @@
 
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title"><%= campground.title%></h5>
-                <p class="card-text"><%= campground.description%></p>
+                <h5 class="card-title text-muted"><%= campground.title%></h5>
+                <p class="card-text text-muted"><%= campground.description%></p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item text-muted"><%= campground.location%></li>
-                <li class="list-group-item">Submitted by <%= campground.author.username%></li>
-                <li class="list-group-item">$<%= campground.price%>/night</li>
+                <li class="list-group-item text-muted">Submitted by <%= campground.author.username%></li>
+                <li class="list-group-item text-muted">$<%= campground.price%>/night</li>
             </ul>
             <%  if( currentUser && campground.author.equals(currentUser._id))  {%>
             <div class="card-body">
@@ -57,7 +57,7 @@
                 <label class="form-label" for="rating">Rating</label>
                 <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
             </div> -->
-            <fieldset class="starability-basic">
+            <fieldset class="starability-basic alignCenterWorkRE">
                 <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
                     aria-label="No rating." />
                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
@@ -84,12 +84,12 @@
         <% for(let review of campground.reviews) { %>
         <div class="card mb-3 ">
             <div class="card-body">
-                <h5 class="card-title"> <%= review.author.username%></h5>
-                <p class="starability-result" data-rating="<%=review.rating%>">
+                <h5 class="card-title text-muted"> <%= review.author.username%></h5>
+                <p class="starability-result all alignCenterWorkRE" data-rating="<%=review.rating%>">
                     Rated: <%= review.rating %> stars
                 </p>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username%></h6> -->
-                <p class="card-text">Review: <%= review.body %></p>
+                <p class="card-text text-muted">Review: <%= review.body %></p>
                 <%  if( currentUser && review.author.equals(currentUser._id))  {%>
                 <form action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger">Delete</button>
